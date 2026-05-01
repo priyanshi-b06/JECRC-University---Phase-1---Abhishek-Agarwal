@@ -31,3 +31,87 @@ int main() {
         }
         return 0;
 }
+
+
+//Problem 3 -- Nested if - else condition
+// to verify user`s age whether eligible for vote or not
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin >> age;
+    
+    if(age >= 18) {
+        if (age >= 100) {
+            cout <<"Eligible for Vote (But we are Super senior citizen";
+             } else {
+                 cout <<"Eligible for vote";
+             } else {
+                 cout << "Not Eligible for vote";
+             }
+    
+    } 
+    return 0;
+}   
+
+
+//Problem 4 -- Ternary operator 
+// Find the greater number among 2 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    int max_Number;
+    
+    cin >> a >> b;
+    //Ternary operator
+    max_Number = (a > b) ? a : b;
+    
+    cout << max_Number;
+    return 0;
+}
+
+Problem 5
+//continue statement
+//print 1 to n and avoid those number which are divisible by 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    for(int i = 1; <= n; i++) {
+        if( i % 3 = 0){
+            continue;
+        }
+        cout << i << " ";
+    }
+    cout <<"/n";
+    return 0;
+}  
+
+Problem 6
+//break statement
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int sum = 0;
+    
+    while(true) {
+        cin >> n;
+        
+        if (n<0){
+            break;
+         }
+         sum = sum + n;
+    }
+    cout << sum;
+    return 0;
+}
