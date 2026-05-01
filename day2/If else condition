@@ -1,0 +1,33 @@
+// Problem 1 - If Condition
+// to verify user`s age whether eligible for vote or not
+#include <iosteam>
+using namespace std;
+
+int main() {
+    int age;
+    cin>>age;
+    // if condition
+    if(age >= 18) {
+        cout << "Eligible for vote";
+        }
+        return 0;
+}
+
+
+// Problem 2 - If else Condition
+// to verify user`s age whether eligible for vote or not
+#include <iosteam>
+using namespace std;
+
+int main() {
+    int age;
+    cin>>age;
+    // if condition
+    if(age >= 18) {
+        cout << "Eligible for vote";
+        } else {
+            //logic
+            cout << "Not eligible for vote";
+        }
+        return 0;
+}
