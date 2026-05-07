@@ -1,0 +1,180 @@
+//Problem 7
+//Access specifier
+//7.2 -- Public 
+#include <iostream>
+using namespace std;
+
+class BandAccount {
+    
+    private:
+    int Balance = 5000;
+    
+    public:
+    void showBalance() {
+        cout << "Balance in your account is: " << Balance;
+       }
+};
+
+int main() {
+    BandAccount myaccount;
+    myaccount.showBalance();
+}
+
+//Problem 7
+//Access specifier
+//7.3 -- Protected 
+#include <iostream> 
+using namespace std;
+
+class Parent {
+protected:
+   int secretCode = 1234;
+   
+};
+class child : public Parent{
+public:
+   void accessOfSecretCode() {
+        cout << "secretCode of the locker is " << secretCode;
+    }
+};
+
+int main() {
+    child obj1;
+    obj1.accessOfSecretCode();
+}
+
+//Problem 7
+//Access specifier 
+//practice problems  
+// PUBLIC EXAMPLE
+
+#include <iostream>
+using namespace std;
+
+class Bike {
+public:
+    void speed() {
+        cout << "Bike speed is 80 km/h";
+    }
+};
+
+int main() {
+    Bike b;
+    b.speed();
+}
+
+//Problem 7
+//Access specifier 
+//practice problems 
+// PRIVATE EXAMPLE
+#include <iostream>
+using namespace std;
+
+class Phone {
+private:
+    int password = 4321;
+
+public:
+    void accessPhone() {
+        cout << "Phone accessed successfully";
+    }
+};
+
+int main() {
+    Phone p;
+    p.accessPhone();
+}
+
+//Problem 7
+//Access specifier 
+//practice problems 
+// PROTECTED EXAMPLE
+#include <iostream>
+using namespace std;
+
+class Teacher {
+protected:
+    string subject = "Math";
+
+};
+
+class Student : public Teacher {
+public:
+    void showSubject() {
+        cout << "Subject is " << subject;
+    }
+};
+
+int main() {
+    Student s;
+    s.showSubject();
+}
+
+//Problem -- 2 
+//Constructors
+//Types -- 2.1 -- default 
+//         2.2 -- Parameterised
+//         2.3 -- copy
+
+#include <iostream>
+using namespace std;
+
+class wifiConnection {
+public:   
+    string networkName;
+    string password;
+    
+    //Constructor
+    wifiConnection() {
+        networkName = "ACTFibre";
+        password = "BJP wons";
+    }
+    
+public:
+void showDetails() {
+    cout << "Network name is " << networkName << " and its password is " << password;
+     }
+    
+};
+
+int main() {
+    wifiConnection obj1;
+    obj1.showDetails();
+    
+}
+
+//Problem -- 3
+//Pillar of OOPS
+//Encapsulation
+//Encapsulation means we are binding the data into a single unit (Functions, data, variables, methods)
+//into a single unit called class and making some reactions on this clas members
+//Data security
+//controlled access over my Data 
+//validation before accessing the Data 
+//code maintainability
+
+#include <iostream>
+using namespace std;
+
+class bankAccount{
+private:
+int balance;
+public:
+void setBalance(int amount) {
+    if(amount >= 0) {
+        balance = amount;
+    } else {
+        cout <<"Enter a valid Number...";
+    }
+}
+
+int getbalance() {
+    return balance;
+    }
+};
+int main() {
+    bankAccount obj1;
+    obj1.setBalance(5000);
+    cout << obj1.getbalance();
+    return 0;
+}
