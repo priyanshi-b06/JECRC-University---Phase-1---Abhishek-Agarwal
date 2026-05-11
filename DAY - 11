@@ -1,0 +1,105 @@
+// Problem - 1
+//Roate Array
+class Solution {
+public:
+    void rotateArray(vector<int>& nums, int start, int end) {
+      while(start < end) {
+        swap(nums[start], nums[end]);
+        start++;
+        end--;
+      }  
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k%n;
+        rotateArray(nums, 0, n-1); // rotating complete array
+        rotateArray(nums, 0, k-1); //rotating first k elements
+        rotateArray(nums, k, n-1); //rotating rest of the array
+    }
+};
+
+//Problem -- 2
+//Reverse String
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        
+        int start = 0;
+        int end = s.size() - 1;
+
+        while(start < end) {
+            swap(s[start], s[end]);
+            start++;
+            end--;
+        }
+    }
+};
+
+//Problem -- 3
+//Pallindrome String
+#include <iostream>
+using namespace std;
+
+bool isPalindrome(string str){
+    int start = 0;
+    int end = str.size()-1;
+    
+    while(start < end) {
+    if(str[start] != str[end]){
+    return false;
+    }
+    start++;
+    end--;
+   }
+   return true;
+}
+
+int main()
+{
+    string str;
+    cout << "Enter a String...";
+    cin >> str;
+    
+    if(isPalindrome(str)) {
+        cout << "Palindrome string";
+    } else{
+        cout <<"Given string is not a palindrome...";
+    }
+    return 0;
+}
+
+//Problem -- 4
+//Rotate String
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+
+        if (s.length()!=goal.length()){
+            return false;
+        }
+        string temp = s+s;
+        return temp.contains(goal);
+        
+    }
+};
+//contains= string found
+//return temp.find(goal)!::npos;
+
+//Problem -- 5
+//Valid Anagram
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size() !=t.size()) {
+            return false;
+        }
+
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+
+        return s == t;
+        
+    }
+};
+
+
