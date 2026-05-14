@@ -1,0 +1,104 @@
+//Problem -- 1 
+//Recursion Consecutive Ones
+
+#include<iostream>
+using namespace std;
+
+int consecutiveOnes(int number) {
+    int n = number;
+    if(n == 0){
+        return 1;
+    }
+    if(n == 1){
+        return 2;
+    }
+    if(n == 2){
+        return 3;
+    }
+    return consecutiveOnes(n-1)+consecutiveOnes(n-2);
+}
+
+
+int main()
+{
+    cout << consecutiveOnes(3);
+    return 0;
+}
+
+//Problem -- 2 
+//Tile Problem 
+
+#include<iostream>
+using namespace std;
+
+int TotalPos(int n){
+    if(n==1){
+        return 1;
+    }
+    if(n==3){
+        return 3;
+    }
+
+We will use either of the vertical or horizontal approach not both one at a time
+
+    //Vertical Approach
+    return TotalPos(n-1) + TotalPos(2-n);
+    //Horizontal Approach
+    return TotalPos(n-1) + TotalPos(n-2);
+}
+
+int main(){
+    cout<<TotalPos(10);
+}
+
+//Problem -- 2(EXAMPLE)
+//If the number of rows are less than 4 then this is the applicable code 
+
+#include<iostream>
+using namespace std;
+
+int TotalPos(int n){
+    
+    //Base Cases 
+    if(n<4){
+        return 1;
+    }
+    if(n==4){
+        return 2;
+    }
+    
+    //Recursive Relation
+    return TotalPos(n-1) + TotalPos(n-4);
+}
+
+int main(){
+    
+    int n = 6;
+    
+    cout << "Total Possibilities = " << TotalPos(n);
+    
+    return 0;
+}
+
+//Problem -- 3
+//House Robbery
+
+class Solution {
+public:
+    int robFrom(vector<int>& nums , int index) {
+        //base condition
+
+        if(index >= nums.size()){
+            return 0;
+        }
+        //logic
+        int include = nums[index] + robFrom(nums ,index +2);
+        int exclude = robFrom(nums, index + 1);
+
+        return max(include, exclude);
+} 
+
+int rob(vector<int>& nums){
+    return robFrom(nums, 0);
+}
+};
